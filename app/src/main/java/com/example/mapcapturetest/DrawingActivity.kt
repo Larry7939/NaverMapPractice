@@ -1,11 +1,9 @@
 package com.example.mapcapturetest
 
-import android.graphics.Bitmap
 import android.graphics.PointF
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.Gravity
 import androidx.activity.viewModels
 import androidx.annotation.UiThread
@@ -124,20 +122,7 @@ class DrawingActivity : BindingActivity<ActivityDrawingBinding>(R.layout.activit
 
     private fun captureMap(bounds: LatLngBounds) {
         //캡쳐해서 이미지 뷰에 set하기~
-        val projection = naverMap.projection
-        val northWest = projection.toScreenLocation(bounds.northWest)
-        val southEast = projection.toScreenLocation(bounds.southEast)
-        projection.metersPerPixel
-        Log.d("metersPerPixel",projection.metersPerPixel.toString())
-        Log.d("getMeterPerDp",projection.metersPerDp.toString())
-        Log.d("화면좌표 NorthWest","${northWest.x} ${northWest.y}")
-        Log.d("화면좌표 southEast","${southEast.x} ${southEast.y}")
-        val mapStartX = northWest.x.toInt()
-        val mapStartY = northWest.y.toInt()
-        val mapWidth = (southEast.x - northWest.x).toInt()
-        val mapHeigth = (northWest.y - southEast.y).toInt()
         naverMap.takeSnapshot {
-            val bitmap = Bitmap.createBitmap(it, 50, 50, 1000, 1200)
             binding.ivDrawingCaptured.setImageBitmap(it)
         }
     }

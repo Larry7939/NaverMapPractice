@@ -7,8 +7,7 @@
         android:fromYScale="0.4"
         android:pivotX="50%"
         android:pivotY="50%"
-        android:repeatCount="infinite"
-        android:repeatMode="restart"
+        android:repeatCount="0"
         android:toXScale="1.0"
         android:toYScale="1.0" />
 </set>

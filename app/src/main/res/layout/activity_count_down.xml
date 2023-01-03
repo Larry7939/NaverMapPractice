@@ -14,7 +14,7 @@
         android:background="@drawable/startbackground">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_count"
+            android:id="@+id/is_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,9 +26,9 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/iv_count"
-            app:layout_constraintStart_toStartOf="@id/iv_count"
-            app:layout_constraintEnd_toEndOf="@id/iv_count"
+            app:layout_constraintTop_toBottomOf="@id/is_count"
+            app:layout_constraintStart_toStartOf="@id/is_count"
+            app:layout_constraintEnd_toEndOf="@id/is_count"
             android:layout_marginTop="30dp"
             android:text="잠시 후 러닝을 시작합니다." />
 
