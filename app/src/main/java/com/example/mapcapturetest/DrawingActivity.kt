@@ -113,10 +113,11 @@ class DrawingActivity : BindingActivity<ActivityDrawingBinding>(R.layout.activit
         naverMap.uiSettings.isZoomControlEnabled = false
         naverMap.setContentPadding(100, 100, 100, 100)
         cameraUpdate(bounds)
+        //이슈 사항 -> 경로 다 그리고 캡쳐하면 종종 지도가 캡쳐할 화면으로 미처 이동하지 못한 상태에서 캡쳐 되어버림 -> 딜레이 부여
         Handler(Looper.getMainLooper()).postDelayed(
             {
                 captureMap(bounds)
-            }, 200
+            }, 500
         )
     }
 
@@ -140,7 +141,5 @@ class DrawingActivity : BindingActivity<ActivityDrawingBinding>(R.layout.activit
             naverMap.moveCamera(cameraUpdate)
         }
     }
-    //이슈 사항 -> 경로 다 그리고 캡쳐하면 종종 지도가 캡쳐할 화면으로 미처 이동하지 못한 상태에서 가버림
-    //그런데 캡쳐함수 captureMap()을 호출하는 onMapReady가 오버라이딩한거라... suspend로 바꿀 수가 없어서
-    //delay()를 줄 수도 없음.
+
 }
