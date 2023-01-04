@@ -116,12 +116,12 @@ class DrawingActivity : BindingActivity<ActivityDrawingBinding>(R.layout.activit
         //이슈 사항 -> 경로 다 그리고 캡쳐하면 종종 지도가 캡쳐할 화면으로 미처 이동하지 못한 상태에서 캡쳐 되어버림 -> 딜레이 부여
         Handler(Looper.getMainLooper()).postDelayed(
             {
-                captureMap(bounds)
+                captureMap()
             }, 500
         )
     }
 
-    private fun captureMap(bounds: LatLngBounds) {
+    private fun captureMap() {
         //캡쳐해서 이미지 뷰에 set하기~
         naverMap.takeSnapshot {
             binding.ivDrawingCaptured.setImageBitmap(it)
